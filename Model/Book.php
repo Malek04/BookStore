@@ -61,6 +61,7 @@
             $rq="select * from book";
             return DataBase::Query($rq,'Book');
         }
+        
         public static function create($tab){
             $rq = "INSERT INTO `book` (`title`) VALUES (:title)";
             return DataBase::execute($rq,$tab);

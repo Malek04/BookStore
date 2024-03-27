@@ -24,5 +24,10 @@
             return DataBase::Query($rq,'Author');
         }
 
+        public static function create($tab){
+            $rq = "INSERT INTO `author` (`name`) VALUES (:name)";
+            return DataBase::execute($rq,$tab);
+        }
+
     }
 ?>

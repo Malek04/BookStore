@@ -10,9 +10,8 @@
 <body>
     <div class="container mt-2">
     <h2>Books List</h2>
-    <a href="#"><h2>Author List</h2></a>
     <hr>
-    <a href="View/book/create.php" class="btn btn-primary">Add</a>
+    <a href="create.php" class="btn btn-primary">Add</a>
     <table class="table table-hover" >
         <tr class="text-center">
             <th scope="col">id book</th>
@@ -38,7 +37,7 @@
                     <td scope="row"><?=$book->get_length()?></td>
                     <td scope="row"><?=$book->get_language()?></td>
                     <td scope="row"><?=$book->get_price()?></td>
-                    <td scope="row"><img class="rounded" src="Images/cover/<?=$book->get_image()?>" width="100" height="150"/></td>
+                    <td scope="row"><img class="rounded" src="../../Images/cover/<?=$book->get_image()?>" width="100" height="150"/></td>
                     <td scope="row"><?=$book->get_description()?></td>
                     <td scope="row"><?=$book->get_qte()?></td>
                     <td scope="row">
