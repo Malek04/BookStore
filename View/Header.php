@@ -18,16 +18,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="View/book/index.php">Books List</a>
+                <a class="nav-link active" aria-current="page" href="View/book/index.php">Books</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Authors List</a>
+                <a class="nav-link" href="View/author/index.php">Authors</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Genre List</a>
+                <a class="nav-link" href="View/Genre/index.php">Genres</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                <a class="nav-link" href="View/User/index.php">Users</a>
                 </li>
             </ul>
             </div>
