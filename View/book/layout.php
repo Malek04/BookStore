@@ -43,7 +43,7 @@
                     <td scope="row">
                         <a href="#" class="btn btn-success">Modify</a>
                         <br><br>
-                        <a href="#" class="btn btn-danger">Delete</a>
+                        <a class="btn btn-danger" href="delete.php?id=<?= $book->get_id_book() ?>">Delete</a>
                     </td>
                 <tr>
         <?php

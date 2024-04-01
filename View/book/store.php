@@ -24,6 +24,7 @@
    <div class="row">
       <div class="col">
          <h1 class="text-center">Insertion operation performed successfully </h1>
+         <h1 class="text-center"><a class="btn btn-warning" href="index.php">Go To Home</a></h1>
       </div>
    </div>
    </div>

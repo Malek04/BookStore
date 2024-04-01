@@ -15,6 +15,17 @@
         public static function storeAction($p){
             $b = Book::create($p);
         }
+
+        public static function deleteAction(){
+            $id= $_GET['id'];
+            require_once __DIR__.'/../View/book/delete.php';
+        }
     
+        public static function destroyAction(){
+            $id = $_GET['id'];
+            book::delete($id);
+            header('location:index.php');
+        }
+        
     }
 ?>
