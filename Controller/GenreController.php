@@ -16,5 +16,16 @@
             $g = Genre::create($p);
         }
 
+        public static function deleteAction(){
+            $id= $_GET['id'];
+            require_once __DIR__.'/../View/genre/delete.php';
+        }
+    
+        public static function destroyAction(){
+            $id = $_GET['id'];
+            genre::delete($id);
+            header('location:index.php');
+        }
+
     }
 ?>

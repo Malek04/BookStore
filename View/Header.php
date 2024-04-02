@@ -29,6 +29,9 @@
                 <li class="nav-item">
                 <a class="nav-link" href="View/User/index.php">Users</a>
                 </li>
+                <li class="nav-item">
+                <a class="nav-link" href="View/Admin/index.php">Admins</a>
+                </li>
             </ul>
             </div>
         </div>

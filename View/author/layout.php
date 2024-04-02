@@ -31,7 +31,7 @@
                     <td scope="row">
                         <a href="#" class="btn btn-success">Modify</a>
                         <br><br>
-                        <a href="#" class="btn btn-danger">Delete</a>
+                        <a href="delete.php?id=<?= $author->get_id_author() ?>" class="btn btn-danger">Delete</a>
                     </td>
                 <tr>
         <?php

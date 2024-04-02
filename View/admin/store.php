@@ -1,8 +1,8 @@
 <?php
-   require_once __DIR__.'/../../Controller/GenreController.php';
-   GenreController::storeAction($_POST);
+   require_once __DIR__.'/../../Controller/AdminController.php';
+   AdminController::storeAction($_POST);
    include __DIR__.'/../header.php';
-   ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

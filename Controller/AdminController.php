@@ -1,31 +1,30 @@
 <?php
-    require_once __DIR__.'/../Model/Author.php';
+    require_once __DIR__.'/../Model/Admin.php';
     require_once __DIR__.'/../Model/DataBase.php';
-    class AuthorConrtoller{
+    class AdminController{
 
         public static function indexAction(){
-            $authors = Author::all();
-            require_once __DIR__.'/../View/author/layout.php';
+            $admins = Admin::all();
+            require_once __DIR__.'/../View/admin/layout.php';
         }
 
         public static function createAction(){
-            require_once __DIR__.'/../View/author/create.php';
+            require_once __DIR__.'/../View/admin/create.php';
         }
 
         public static function storeAction($p){
-            $o = Author::create($p);
+            $o = Admin::create($p);
         }
 
         public static function deleteAction(){
             $id= $_GET['id'];
-            require_once __DIR__.'/../View/author/delete.php';
+            require_once __DIR__.'/../View/admin/delete.php';
         }
     
         public static function destroyAction(){
             $id = $_GET['id'];
-            author::delete($id);
+            Admin::delete($id);
             header('location:index.php');
         }
-
     }
 ?>

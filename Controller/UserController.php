@@ -8,5 +8,15 @@
             require_once __DIR__.'/../View/User/layout.php';
         }
 
+        public static function deleteAction(){
+            $id= $_GET['id'];
+            require_once __DIR__.'/../View/user/delete.php';
+        }
+    
+        public static function destroyAction(){
+            $id = $_GET['id'];
+            user::delete($id);
+            header('location:index.php');
+        }
     }
 ?>

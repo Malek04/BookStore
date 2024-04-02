@@ -22,5 +22,11 @@
             return DataBase::execute($rq,$tab);
         }
 
+        public static function delete($id){
+            $rq = "DELETE FROM `genre` WHERE id_genre = :id";
+            $tab['id'] = $id;
+            return DataBase::execute($rq, $tab);
+        }
+
     }
 ?>
