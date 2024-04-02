@@ -63,9 +63,9 @@
         }
         
         public static function create($tab){
-            $rq = "INSERT INTO `book` (`title`) VALUES (:title)";
-            return DataBase::execute($rq,$tab);
-        }
+            $rq = "INSERT INTO `book`(`id_genre`, `id_author`, `title`, `length`, `language`, `publisher`, `price`, `image`, `description`, `qte`) VALUES (:id_genre,:id_author,:title,:length,:language,:publisher,:price,:image,:description,:qte)";
+            return DataBase::execute($rq, $tab);
+        }       
         
         public static function delete($id){
             $rq = "DELETE FROM `book` WHERE id_book = :id";

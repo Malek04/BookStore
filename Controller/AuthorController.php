@@ -19,8 +19,8 @@
             
             if ($target_file_name !== null) {
                 $_POST['image'] = $target_file_name;
-                $o = Author::create($p);
             }
+            $o = Author::create($p);
         }
         
         public static function deleteAction(){

@@ -1,3 +1,11 @@
+<?php
+    include __DIR__.'/../header.php';
+    require_once __DIR__.'/../../model/DataBase.php';
+    require_once __DIR__.'/../../model/genre.php';
+    require_once __DIR__.'/../../model/author.php';
+    $genres = Genre::all();
+    $authors = Author::all();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,13 +19,65 @@
     <div class="container mt-2">
         <form method="POST" action="store.php">
         <div class="mb-3">
+            <label for="genre" class="form-label">Genre</label>
+            </br>
+            <select name="id_genre">
+            <?php
+                foreach($genres as $genre){
+                    ?>
+                    <option value="<?=$genre->get_id_genre()?>"><?=$genre->get_genre()?></option>
+                    <?php
+                }
+            ?>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="id_author" class="form-label">Genre</label>
+            </br>
+            <select name="id_author">
+            <?php
+                foreach($authors as $author){
+                    ?>
+                    <option value="<?=$author->get_id_author()?>"><?=$author->get_name()?></option>
+                    <?php
+                }
+            ?>
+            </select>
+        </div>
+        <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input type="text" class="form-control" name="title" id="title">
+        </div>
+        <div class="mb-3">
+            <label for="length" class="form-label">length</label>
+            <input type="number" class="form-control" name="length" id="length">
+        </div>
+        <div class="mb-3">
+            <label for="language" class="form-label">Language</label>
+            <input type="text" class="form-control" name="language" id="language">
+        </div>
+        <div class="mb-3">
+            <label for="publisher" class="form-label">Publisher</label>
+            <input type="text" class="form-control" name="publisher" id="publisher">
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="text" class="form-control" name="price" id="price">
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image</label>
+            <input type="file" class="form-control" name="image" id="image">
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Dscription</label>
+            <textarea class="form-control" name="description" id="description"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="qte" class="form-label">Quantité</label>
+            <input type="number" class="form-control" name="qte" id="qte">
         </div>
         <button type="submit" class="btn btn-primary">Add</button>
         </form>
     </div>
 </body>
 </html>
-<?php
-?>

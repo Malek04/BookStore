@@ -3,7 +3,7 @@
     require_once __DIR__.'/../Model/DataBase.php';
     class GenreController{
 
-        public static function indexACtion(){
+        public static function indexAction(){
             $genres = Genre::all();
             require_once __DIR__.'/../View/Genre/layout.php';
         }

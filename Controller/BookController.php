@@ -1,6 +1,7 @@
 <?php
     require_once __DIR__.'/../Model/Book.php';
     require_once __DIR__.'/../Model/DataBase.php';
+    require_once __DIR__.'/../Model/UploadFile.php';
     class BookConrtoller{
 
         public static function indexAction(){
@@ -13,6 +14,11 @@
         }
 
         public static function storeAction($p){
+            $target_dir = __DIR__.'/../Images/cover/';
+            $target_file_name = UploadFile::upload("image", $target_dir);
+            if ($target_file_name !== null) {
+                $_POST['image'] = $target_file_name;
+            }
             $b = Book::create($p);
         }
 
