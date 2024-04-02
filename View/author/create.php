@@ -1,3 +1,6 @@
+<?php
+   include __DIR__.'/../header.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +16,15 @@
         <div class="mb-3">
             <label for="title" class="form-label">Name</label>
             <input type="text" class="form-control" name="name" id="name">
+        </div>
+        <div class="mb-3">
+            <label for="title" class="form-label">Image</label>
+            <input type="file" class="form-control" name="image" id="image">
+        </div>
+        <div class="mb-3">
+            <label for="title" class="form-label">about</label>
+            <textarea type="text" class="form-control" name="about" id="about">
+            </textarea>
         </div>
         <button type="submit" class="btn btn-primary">Add</button>
         </form>

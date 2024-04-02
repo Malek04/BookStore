@@ -25,7 +25,7 @@
         }
 
         public static function create($tab){
-            $rq = "INSERT INTO `author` (`name`) VALUES (:name)";
+            $rq = "INSERT INTO `author` (`name`,`image`,`about`) VALUES (:name,:image,:about)";
             return DataBase::execute($rq,$tab);
         }
 
