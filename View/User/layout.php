@@ -36,7 +36,7 @@
                     <td scope="row"><?=$user->get_email()?></td>
                     <td scope="row"><?=$user->get_pwd()?></td>
                     <td scope="row">
-                        <a href="#" class="btn btn-success">Modify</a>  
+                        <a href="edit.php?id=<?= $user->get_id_user() ?>" class="btn btn-success">Modify</a>  
                         <a href="delete.php?id=<?= $user->get_id_user() ?>" class="btn btn-danger">Delete</a>
                     </td>
                 <tr>

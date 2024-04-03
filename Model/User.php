@@ -47,12 +47,40 @@
             return DataBase::Query($rq,'User');
         }
 
+        public static function edit($id, $fname, $lname, $username, $pc, $tel, $email, $pwd) {
+            $rq = "UPDATE user 
+            SET fname = :fname,
+                lname = :lname,
+                username = :username,
+                pc = :pc,
+                tel = :tel,
+                email = :email,
+                pwd = :pwd
+            WHERE id_user = :id
+        ";
+        $tab = array(
+            ':fname' => $fname,
+            ':lname' => $lname,
+            ':username' => $username,
+            ':pc' => $pc,
+            ':tel' => $tel,
+            ':email' => $email,
+            ':pwd' => $pwd,
+            ':id' => $id
+        );
+            return DataBase::execute($rq, $tab);
+        }
+    
         public static function delete($id){
             $rq = "DELETE FROM `user` WHERE id_user = :id";
             $tab['id'] = $id;
             return DataBase::execute($rq, $tab);
         }
 
-
+        public static function view($id){
+            $rq = "SELECT * FROM user WHERE id_user = :id";
+            $params = array(':id' => $id);
+            return DataBase::Query($rq, 'User', $params);
+        }
     }
 ?>
