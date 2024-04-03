@@ -53,10 +53,39 @@ class Admin{
         return DataBase::execute($rq,$tab);
     }
     
+    public static function edit($id,$fname, $lname, $admin_name, $pc, $tel, $email, $pwd) {
+        $rq ="  UPDATE admin 
+                SET fname = :fname,
+                    lname = :lname,
+                    admin_name = :admin_name,
+                    pc = :pc,
+                    tel = :tel,
+                    email = :email,
+                    pwd = :pwd
+                WHERE id_admin = :id";
+        $tab = array(
+            ':fname' => $fname,
+            ':lname' => $lname,
+            ':admin_name' => $admin_name,
+            ':pc' => $pc,
+            ':tel' => $tel,
+            ':email' => $email,
+            ':pwd' => $pwd,
+            ':id' => $id
+        );
+        return DataBase::execute($rq, $tab);
+    }
+    
     public static function delete($id){
         $rq = "DELETE FROM `admin` WHERE id_admin = :id";
         $tab['id'] = $id;
         return DataBase::execute($rq, $tab);
+    }
+
+    public static function view($id){
+        $rq = "SELECT * FROM admin WHERE id_admin = :id";
+        $params = array(':id' => $id);
+        return DataBase::Query($rq, 'Admin', $params);
     }
 }
 ?>

@@ -16,6 +16,17 @@
             $o = Admin::create($p);
         }
 
+        public static function editAction(){
+            $a = admin::view($_GET['id']);
+            require_once __DIR__.'/../View/admin/modify.php';
+        }
+    
+        public static function updateAction(){
+            extract($_POST);
+            Admin::edit($id, $fname, $lname, $admin_name, $pc, $tel, $email, $pwd);
+            header('location:index.php');
+        }
+
         public static function deleteAction(){
             $id= $_GET['id'];
             require_once __DIR__.'/../View/admin/delete.php';
