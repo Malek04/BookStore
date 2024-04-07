@@ -29,7 +29,7 @@
                     <td scope="row"><img class="rounded" src="../../Images/author/<?=$author->get_image()?>" width="100" height="150"/></td>
                     <td scope="row"><?=$author->get_about()?></td>
                     <td scope="row">
-                        <a href="#" class="btn btn-success">Modify</a>
+                        <a href="edit.php?id=<?= $author->get_id_author() ?>" class="btn btn-success">Modify</a>
                         <br><br>
                         <a href="delete.php?id=<?= $author->get_id_author() ?>" class="btn btn-danger">Delete</a>
                     </td>

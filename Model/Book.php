@@ -67,12 +67,45 @@
             return DataBase::execute($rq, $tab);
         }       
         
+        public static function edit($id_book, $id_genre, $id_author, $title, $length, $language, $price, $image, $description, $qte) {
+            $rq = "UPDATE book 
+                    SET id_genre = :id_genre,
+                        id_author = :id_author,
+                        title = :title,
+                        length = :length,
+                        language = :language,
+                        price = :price,
+                        image = :image,
+                        description = :description,
+                        qte = :qte
+                    WHERE id_book = :id_book";
+            $tab = array(
+                ':id_genre' => $id_genre,
+                ':id_author' => $id_author,
+                ':title' => $title,
+                ':length' => $length,
+                ':language' => $language,
+                ':price' => $price,
+                ':image' => $image,
+                ':description' => $description,
+                ':qte' => $qte,
+                ':id_book' => $id_book,
+            );
+            return DataBase::execute($rq, $tab);
+        }
+        
         public static function delete($id){
             $rq = "DELETE FROM `book` WHERE id_book = :id";
             $tab['id'] = $id;
             return DataBase::execute($rq, $tab);
         }
-    
+        
+        public static function view($id){
+            $rq = "SELECT * FROM book WHERE id_book = :id";
+            $params = array(':id' => $id);
+            return DataBase::Query($rq, 'Book', $params);
+        }
+
     
     }
 ?>

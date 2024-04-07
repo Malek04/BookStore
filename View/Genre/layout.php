@@ -25,7 +25,7 @@
                     <td scope="row"><?=$genre->get_id_genre()?></td>
                     <td scope="row"><?=$genre->get_genre()?></td>
                     <td scope="row">
-                        <a href="#" class="btn btn-success">Modify</a>
+                        <a href="edit.php?id=<?= $genre->get_id_genre() ?>" class="btn btn-success">Modify</a>
                         <a href="delete.php?id=<?= $genre->get_id_genre() ?>" class="btn btn-danger">Delete</a>
                     </td>
                 <tr>

@@ -32,7 +32,7 @@
             </select>
         </div>
         <div class="mb-3">
-            <label for="id_author" class="form-label">Genre</label>
+            <label for="id_author" class="form-label">Author</label>
             </br>
             <select name="id_author">
             <?php

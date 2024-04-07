@@ -16,6 +16,17 @@
             $g = Genre::create($p);
         }
 
+        public static function editAction(){
+            $g = Genre::view($_GET['id']);
+            require_once __DIR__.'/../View/genre/modify.php';
+        }
+    
+        public static function updateAction(){
+            extract($_POST);
+            Genre::edit($id, $genre);
+            header('location:index.php');
+        }
+
         public static function deleteAction(){
             $id= $_GET['id'];
             require_once __DIR__.'/../View/genre/delete.php';

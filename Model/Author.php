@@ -29,11 +29,32 @@
             return DataBase::execute($rq,$tab);
         }
 
+        public static function edit($id, $name, $image, $about) {
+            $rq = "UPDATE author 
+                    SET name = :name,
+                        image = :image,
+                        about = :about
+                    WHERE id_author = :id";
+            $tab = array(
+                ':name' => $name,
+                ':image' => $image,
+                ':about' => $about,
+                ':id' => $id,
+            );
+            return DataBase::execute($rq, $tab);
+        }
+        
         public static function delete($id){
             $rq = "DELETE FROM `author` WHERE id_author = :id";
             $tab['id'] = $id;
             return DataBase::execute($rq, $tab);
         }
 
+        public static function view($id){
+            $rq = "SELECT * FROM author WHERE id_author = :id";
+            $params = array(':id' => $id);
+            return DataBase::Query($rq, 'Author', $params);
+        }
+    
     }
 ?>

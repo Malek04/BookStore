@@ -41,7 +41,7 @@
                     <td scope="row"><?=$book->get_description()?></td>
                     <td scope="row"><?=$book->get_qte()?></td>
                     <td scope="row">
-                        <a href="#" class="btn btn-success">Modify</a>
+                        <a href="edit.php?id=<?= $book->get_id_book() ?>" class="btn btn-success">Modify</a>
                         <br><br>
                         <a class="btn btn-danger" href="delete.php?id=<?= $book->get_id_book() ?>">Delete</a>
                     </td>
