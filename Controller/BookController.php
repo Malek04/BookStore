@@ -6,7 +6,7 @@
 
         public static function indexAction(){
             $books = Book::all();
-            require_once __DIR__.'/../View/book/layout.php';
+            require_once __DIR__.'/../View/book/list_book.php';
         }
 
         public static function createAction(){
@@ -20,11 +20,12 @@
                 $_POST['image'] = $target_file_name;
             }
             $b = Book::create($p);
+            echo '<script>window.location.href = "index.php?controller=book&action=list";</script>';
         }
 
         public static function editAction(){
             $b = Book::view($_GET['id']);
-            require_once __DIR__.'/../View/book/modify.php';
+            require_once __DIR__.'/../View/book/edit.php';
         }
     
         public static function updateAction(){
@@ -35,18 +36,17 @@
                 $_GET['image'] = $target_file_name;
             }
             Book::edit($id_book, $id_genre, $id_author, $title, $length, $language, $price, $image, $description, $qte);
-            header('location:index.php');
+            echo '<script>window.location.href = "index.php?controller=book&action=list";</script>';
         }
 
         public static function deleteAction(){
-            $id= $_GET['id'];
             require_once __DIR__.'/../View/book/delete.php';
         }
     
         public static function destroyAction(){
             $id = $_GET['id'];
             book::delete($id);
-            header('location:index.php');
+            echo '<script>window.location.href = "index.php?controller=book&action=list";</script>';
         }
         
     }

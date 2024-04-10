@@ -64,15 +64,14 @@
                         <span>Comments</span>
                     </a>
                 </li>
-            </ul>
-            
-            <div class="sidebar-footer">
+                <li>
                 <a href="#" class="sidebar-link">
                     <i class="lni lni-exit"></i>
                     <span>Logout</span>
                 </a>
-            </div>
-        </aside>
+                </li>
+            </ul>
+        </aside>   
         <div class="main p-3">
             <div class="text-center">
                 <?php

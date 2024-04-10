@@ -11,7 +11,7 @@
     <div class="container mt-2">
     <h2>Authors List</h2>
     <hr>
-    <a href="create.php" class="btn btn-primary">Add</a>
+    <a href="index.php?controller=author&action=create" class="btn btn-primary">Add</a>
     <table class="table table-hover" >
         <tr class="text-center">
             <th scope="col">ID Author</th>
@@ -26,12 +26,12 @@
                 <tr class="text-center">
                     <td scope="row"><?=$author->get_id_author()?></td>
                     <td scope="row"><?=$author->get_name()?></td>
-                    <td scope="row"><img class="rounded" src="../../Images/author/<?=$author->get_image()?>" width="100" height="150"/></td>
+                    <td scope="row"><img class="rounded" src="Images/author/<?=$author->get_image()?>" width="100" height="150"/></td>
                     <td scope="row"><?=$author->get_about()?></td>
                     <td scope="row">
-                        <a href="edit.php?id=<?= $author->get_id_author() ?>" class="btn btn-success">Modify</a>
+                        <a href="index.php?controller=author&action=edit&id=<?= $author->get_id_author() ?>" class="btn btn-success">Modify</a>
                         <br><br>
-                        <a href="delete.php?id=<?= $author->get_id_author() ?>" class="btn btn-danger">Delete</a>
+                        <a href="index.php?controller=author&action=delete&id=<?= $author->get_id_author() ?>" class="btn btn-danger">Delete</a>
                     </td>
                 <tr>
         <?php

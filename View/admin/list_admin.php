@@ -1,7 +1,3 @@
-<?php
-    $title = "Admins List";
-    ob_start();
-?>  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +9,8 @@
 </head>
 <body>
     <div class="container mt-2">
+    <h2>Admins List</h2>
+    <hr>
     <a href="index.php?controller=admin&action=create" class="btn btn-primary">Add</a>
     <table class="table table-hover" >
         <tr class="text-center">
@@ -49,9 +47,3 @@
     </div>
 </body>
 </html>
-<?php
-    $content=ob_get_clean();
-?>
-<?php
-    include_once 'View/admin/layout.php';
-?>

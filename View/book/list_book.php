@@ -1,3 +1,7 @@
+<?php
+    $title = "Books List";
+    ob_start();
+?>  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,9 +13,9 @@
 </head>
 <body>
     <div class="container mt-2">
-    <h2>Books List</h2>
+    <h2> Books List</h2>
     <hr>
-    <a href="create.php" class="btn btn-primary">Add</a>
+    <a href="index.php?controller=book&action=create" class="btn btn-primary">Add</a>
     <table class="table table-hover" >
         <tr class="text-center">
             <th scope="col">id book</th>
@@ -37,13 +41,13 @@
                     <td scope="row"><?=$book->get_length()?></td>
                     <td scope="row"><?=$book->get_language()?></td>
                     <td scope="row"><?=$book->get_price()?></td>
-                    <td scope="row"><img class="rounded" src="../../Images/cover/<?=$book->get_image()?>" width="100" height="150"/></td>
+                    <td scope="row"><img class="rounded" src="Images/cover/<?=$book->get_image()?>" width="100" height="150"/></td>
                     <td scope="row"><?=$book->get_description()?></td>
                     <td scope="row"><?=$book->get_qte()?></td>
                     <td scope="row">
-                        <a href="edit.php?id=<?= $book->get_id_book() ?>" class="btn btn-success">Modify</a>
+                        <a href="index.php?controller=book&action=edit&id=<?= $book->get_id_book() ?>" class="btn btn-success">Modify</a>
                         <br><br>
-                        <a class="btn btn-danger" href="delete.php?id=<?= $book->get_id_book() ?>">Delete</a>
+                        <a class="btn btn-danger" href="index.php?controller=book&action=delete&id=<?= $book->get_id_book() ?>">Delete</a>
                     </td>
                 <tr>
         <?php

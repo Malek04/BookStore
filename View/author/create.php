@@ -1,6 +1,3 @@
-<?php
-   include __DIR__.'/../header.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +9,9 @@
 </head>
 <body>
     <div class="container mt-2">
-        <form method="POST" action="store.php">
+    <h1>Adding an Author</h1>
+    <hr>
+        <form method="POST" action="index.php?controller=author&action=store">
         <div class="mb-3">
             <label for="title" class="form-label">Name</label>
             <input type="text" class="form-control" name="name" id="name">

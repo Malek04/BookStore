@@ -1,5 +1,4 @@
 <?php
-    include __DIR__.'/../header.php';
     require_once __DIR__.'/../../model/DataBase.php';
     require_once __DIR__.'/../../model/genre.php';
     require_once __DIR__.'/../../model/author.php';
@@ -17,7 +16,7 @@
 </head>
 <body>
     <div class="container mt-2">
-        <form method="POST" action="store.php">
+        <form method="POST" action="index.php?controller=book&action=store">
         <div class="mb-3">
             <label for="genre" class="form-label">Genre</label>
             </br>

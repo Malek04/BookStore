@@ -1,7 +1,3 @@
-<?php
-    $title = "Users List";
-    ob_start();
-?>  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +9,8 @@
 </head>
 <body>
     <div class="container mt-2">
+    <h2>Users List</h2>
+    <hr>
     <table class="table table-hover" >
         <tr class="text-center">
             <th scope="col">ID User</th>
@@ -48,9 +46,3 @@
     </div>
 </body>
 </html>
-<?php
-    $content=ob_get_clean();
-?>
-<?php
-    include_once 'View/user/layout.php';
-?>
