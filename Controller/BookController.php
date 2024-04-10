@@ -2,7 +2,7 @@
     require_once __DIR__.'/../Model/Book.php';
     require_once __DIR__.'/../Model/DataBase.php';
     require_once __DIR__.'/../Model/UploadFile.php';
-    class BookConrtoller{
+    class BookController{
 
         public static function indexAction(){
             $books = Book::all();

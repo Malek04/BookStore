@@ -5,29 +5,29 @@
 
         public static function indexAction(){
             $users = User::all();
-            require_once __DIR__.'/../View/User/layout.php';
+            require_once __DIR__.'/../View/User/list_user.php';
         }
 
         public static function editAction(){
-            $u = user::view($_GET['id']);
-            require_once __DIR__.'/../View/User/modify.php';
+            $var=$_GET['id'];
+            $u = user::view($var);
+            require_once __DIR__.'/../View/User/edit.php';
         }
     
         public static function updateAction(){
             extract($_POST);
             User::edit($id, $fname, $lname, $username, $pc, $tel, $email, $pwd);
-            header('location:index.php');
+            echo '<script>window.location.href = "index.php?controller=user&action=list";</script>';
         }
 
         public static function deleteAction(){
-            $id= $_GET['id'];
             require_once __DIR__.'/../View/user/delete.php';
         }
     
         public static function destroyAction(){
             $id = $_GET['id'];
             user::delete($id);
-            header('location:index.php');
+            echo '<script>window.location.href = "index.php?controller=user&action=list";</script>';
         }
     }
 ?>

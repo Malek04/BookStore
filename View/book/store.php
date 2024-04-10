@@ -1,6 +1,6 @@
 <?php
    require_once __DIR__.'/../../Controller/BookController.php';
-   BookConrtoller::storeAction($_POST);
+   BookController::storeAction($_POST);
    include __DIR__.'/../header.php';
    ?>
 <!DOCTYPE html>
