@@ -11,7 +11,7 @@
     <div class="container mt-2">
     <h1>Adding an Author</h1>
     <hr>
-        <form method="POST" action="index_admin.php?controller=author&action=store">
+        <form method="POST" action="index_admin.php?controller=author&action=store" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="title" class="form-label">Name</label>
             <input type="text" class="form-control" name="name" id="name">

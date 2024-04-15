@@ -18,7 +18,7 @@
     <div class="container mt-2">
         <h1>Adding a book</h1>
         <hr>
-        <form method="POST" action="index_admin.php?controller=book&action=store">
+        <form method="POST" action="index_admin.php?controller=book&action=store" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="genre" class="form-label">Genre</label>
             </br>

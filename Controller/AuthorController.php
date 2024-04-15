@@ -13,12 +13,11 @@
             require_once __DIR__.'/../View/author/create.php';
         }
     
-        public static function storeAction($p) {
-            $target_dir = __DIR__.'/../images/author/';
+        public static function storeAction($p){
+            $target_dir = __DIR__.'/../Images/author/';
             $target_file_name = UploadFile::upload("image", $target_dir);
-            
             if ($target_file_name !== null) {
-                $_POST['image'] = $target_file_name;
+                $p['image'] = $target_file_name;
             }
             $o = Author::create($p);
             echo '<script>window.location.href = "index_admin.php?controller=author&action=list";</script>';
@@ -31,10 +30,12 @@
     
         public static function updateAction(){
             extract($_POST);
-            $target_dir = __DIR__.'/../images/author/';
+            $target_dir = __DIR__.'/../Images/author/';
             $target_file_name = UploadFile::upload("image", $target_dir);
             if ($target_file_name !== null) {
-                $_GET['image'] = $target_file_name;
+                $image = $target_file_name;
+            } else {
+                $image = $_POST['image'];
             }
             Author::edit($id_author, $name, $image, $about);
             echo '<script>window.location.href = "index_admin.php?controller=author&action=list";</script>';

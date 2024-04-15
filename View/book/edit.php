@@ -16,7 +16,7 @@
 </head>
 <body>
     <div class="container mt-2">
-        <form method="POST" action="index_admin.php?controller=book&action=update">
+        <form method="POST" action="index_admin.php?controller=book&action=update" enctype="multipart/form-data">
         <?php 
             foreach($b as $book){
         ?>
@@ -31,7 +31,7 @@
                 <?php
                     foreach($genres as $genre){
                         ?>
-                        <option value="<?=$genre->get_id_genre()?>"><?=$genre->get_genre()?></option>
+                        <option value="<?=$book->get_id_genre()?>"><?=$genre->get_genre()?></option>
                         <?php
                     }
                 ?>

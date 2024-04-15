@@ -12,7 +12,7 @@
         foreach($a as $author){
     ?>
     <div class="container mt-2">
-        <form method="POST" action="index_admin.php?controller=author&action=update">
+        <form method="POST" action="index_admin.php?controller=author&action=update" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="title" class="form-label">ID</label>
             <input type="text" class="form-control" name="id_author" id="id_author" value="<?=$author->get_id_author();?>"readonly >

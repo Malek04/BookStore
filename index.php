@@ -14,10 +14,6 @@
 	<meta name="description" content="">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-
 	<link rel="stylesheet" type="text/css" href="view/interface/css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="view/interface/icomoon/icomoon.css">
 	<link rel="stylesheet" type="text/css" href="view/interface/css/vendor.css">
@@ -93,7 +89,7 @@
 						<nav id="navbar">
 							<div class="main-menu stellarnav">
 								<ul class="menu-list">
-									<li class="menu-item active"><a href="#home">Home</a></li>
+									<li class="menu-item active"><a href="index.php">Home</a></li>
 									<li class="menu-item has-sub">
 										<a href="#pages" class="nav-link">Pages</a>
 
