@@ -14,7 +14,7 @@
 
         public static function storeAction($p){
             $o = Admin::create($p);
-            echo '<script>window.location.href = "index.php?controller=admin&action=list";</script>';
+            echo '<script>window.location.href = "index_admin.php?controller=admin&action=list";</script>';
         }
 
         public static function editAction(){
@@ -26,7 +26,7 @@
         public static function updateAction(){
             extract($_POST);
             Admin::edit($id, $fname, $lname, $admin_name, $pc, $tel, $email, $pwd);
-            echo '<script>window.location.href = "index.php?controller=admin&action=list";</script>';
+            echo '<script>window.location.href = "index_admin.php?controller=admin&action=list";</script>';
         }
 
         public static function deleteAction(){
@@ -36,7 +36,7 @@
         public static function destroyAction(){
             $id = $_GET['id'];
             Admin::delete($id);
-            echo '<script>window.location.href = "index.php?controller=admin&action=list";</script>';
+            echo '<script>window.location.href = "index_admin.php?controller=admin&action=list";</script>';
         }
     }
 ?>

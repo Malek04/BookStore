@@ -17,7 +17,7 @@
         public static function updateAction(){
             extract($_POST);
             User::edit($id, $fname, $lname, $username, $pc, $tel, $email, $pwd);
-            echo '<script>window.location.href = "index.php?controller=user&action=list";</script>';
+            echo '<script>window.location.href = "index_admin.php?controller=user&action=list";</script>';
         }
 
         public static function deleteAction(){
@@ -27,7 +27,7 @@
         public static function destroyAction(){
             $id = $_GET['id'];
             user::delete($id);
-            echo '<script>window.location.href = "index.php?controller=user&action=list";</script>';
+            echo '<script>window.location.href = "index_admin.php?controller=user&action=list";</script>';
         }
     }
 ?>

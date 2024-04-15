@@ -11,7 +11,7 @@
     <div class="container mt-2">
         <h1>Adding an Admin</h1>
     <hr>
-        <form method="POST" action="index.php?controller=admin&action=store">
+        <form method="POST" action="index_admin.php?controller=admin&action=store">
         <div class="mb-3">
             <label for="title" class="form-label">First name</label>
             <input type="text" class="form-control" name="fname" id="fname">

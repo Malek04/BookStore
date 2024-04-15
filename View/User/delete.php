@@ -20,8 +20,8 @@
 <div class="row">
     <div class="col">
         <h1 class="text-center">Do you really want to delete the User</h1>
-        <h1 class="text-center"><a class="btn btn-danger" href="index.php?controller=user&action=destroy&id=<?=$_GET['id']?>>">Delete User</a></h1>
-        <h1 class="text-center"><a class="btn btn-warning" href="index.php?controller=user&action=list">Cancel</a></h1>
+        <h1 class="text-center"><a class="btn btn-danger" href="index_admin.php?controller=user&action=destroy&id=<?=$_GET['id']?>>">Delete User</a></h1>
+        <h1 class="text-center"><a class="btn btn-warning" href="index_admin.php?controller=user&action=list">Cancel</a></h1>
     </div>
 </div>
 </div>

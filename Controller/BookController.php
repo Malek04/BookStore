@@ -20,7 +20,7 @@
                 $_POST['image'] = $target_file_name;
             }
             $b = Book::create($p);
-            echo '<script>window.location.href = "index.php?controller=book&action=list";</script>';
+            echo '<script>window.location.href = "index_admin.php?controller=book&action=list";</script>';
         }
 
         public static function editAction(){
@@ -36,7 +36,7 @@
                 $_GET['image'] = $target_file_name;
             }
             Book::edit($id_book, $id_genre, $id_author, $title, $length, $language, $price, $image, $description, $qte);
-            echo '<script>window.location.href = "index.php?controller=book&action=list";</script>';
+            echo '<script>window.location.href = "index_admin.php?controller=book&action=list";</script>';
         }
 
         public static function deleteAction(){
@@ -46,7 +46,7 @@
         public static function destroyAction(){
             $id = $_GET['id'];
             book::delete($id);
-            echo '<script>window.location.href = "index.php?controller=book&action=list";</script>';
+            echo '<script>window.location.href = "index_admin.php?controller=book&action=list";</script>';
         }
         
     }

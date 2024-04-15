@@ -36,8 +36,8 @@
                     <td scope="row"><?=$user->get_email()?></td>
                     <td scope="row"><?=$user->get_pwd()?></td>
                     <td scope="row">
-                        <a href="index.php?controller=user&action=edit&id=<?=  $user->get_id_user()?>" class="btn btn-success">Modify</a>  
-                        <a href="index.php?controller=user&action=delete&id=<?= $user->get_id_user() ?>" class="btn btn-danger">Delete</a>
+                        <a href="index_admin.php?controller=user&action=edit&id=<?=  $user->get_id_user()?>" class="btn btn-success">Modify</a>  
+                        <a href="index_admin.php?controller=user&action=delete&id=<?= $user->get_id_user() ?>" class="btn btn-danger">Delete</a>
                     </td>
                 <tr>
         <?php

@@ -9,9 +9,9 @@
 </head>
 <body>
     <div class="container mt-2">
-        <h1>Adding an Admin</h1>
+        <h1>Adding a Genre</h1>
         <hr>
-        <form method="POST" action="index.php?controller=genre&action=store">
+        <form method="POST" action="index_admin.php?controller=genre&action=store">
         <div class="mb-3">
             <label for="title" class="form-label">Genre</label>
             <input type="text" class="form-control" name="genre" id="genre">

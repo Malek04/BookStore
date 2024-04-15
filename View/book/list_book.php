@@ -15,7 +15,7 @@
     <div class="container mt-2">
     <h2> Books List</h2>
     <hr>
-    <a href="index.php?controller=book&action=create" class="btn btn-primary">Add</a>
+    <a href="index_admin.php?controller=book&action=create" class="btn btn-primary">Add</a>
     <table class="table table-hover" >
         <tr class="text-center">
             <th scope="col">id book</th>
@@ -45,9 +45,9 @@
                     <td scope="row"><?=$book->get_description()?></td>
                     <td scope="row"><?=$book->get_qte()?></td>
                     <td scope="row">
-                        <a href="index.php?controller=book&action=edit&id=<?= $book->get_id_book() ?>" class="btn btn-success">Modify</a>
+                        <a href="index_admin.php?controller=book&action=edit&id=<?= $book->get_id_book() ?>" class="btn btn-success">Modify</a>
                         <br><br>
-                        <a class="btn btn-danger" href="index.php?controller=book&action=delete&id=<?= $book->get_id_book() ?>">Delete</a>
+                        <a class="btn btn-danger" href="index_admin.php?controller=book&action=delete&id=<?= $book->get_id_book() ?>">Delete</a>
                     </td>
                 <tr>
         <?php

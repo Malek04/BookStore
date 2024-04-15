@@ -1,5 +1,4 @@
 <?php
-    include __DIR__.'/../header.php';
     require_once __DIR__.'/../../model/DataBase.php';
     require_once __DIR__.'/../../model/genre.php';
     require_once __DIR__.'/../../model/author.php';
@@ -17,7 +16,7 @@
 </head>
 <body>
     <div class="container mt-2">
-        <form method="POST" action="index.php?controller=book&action=update">
+        <form method="POST" action="index_admin.php?controller=book&action=update">
         <?php 
             foreach($b as $book){
         ?>
@@ -28,7 +27,7 @@
             <div class="mb-3">
                 <label for="genre" class="form-label">Genre</label>
                 </br>
-                <select name="id_genre">
+                <select name="id_genre" class="form-select" aria-label="Default select example">
                 <?php
                     foreach($genres as $genre){
                         ?>
@@ -41,7 +40,7 @@
             <div class="mb-3">
                 <label for="id_author" class="form-label">Author</label>
                 </br>
-                <select name="id_author">
+                <select name="id_author" class="form-select" aria-label="Default select example">
                 <?php
                     foreach($authors as $author){
                         ?>

@@ -14,7 +14,7 @@
     <div class="container mt-2">
         <h1>Modifying Admin</h1>
         </hr>
-        <form method="POST" action="index.php?controller=admin&action=update">
+        <form method="POST" action="index_admin.php?controller=admin&action=update">
         <div class="mb-3">
             <label for="title" class="form-label">ID</label>
             <input type="text" class="form-control" name="id" id="id" value="<?=$admin->get_id_admin();?>"readonly >

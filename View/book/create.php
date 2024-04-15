@@ -16,11 +16,14 @@
 </head>
 <body>
     <div class="container mt-2">
-        <form method="POST" action="index.php?controller=book&action=store">
+        <h1>Adding a book</h1>
+        <hr>
+        <form method="POST" action="index_admin.php?controller=book&action=store">
         <div class="mb-3">
             <label for="genre" class="form-label">Genre</label>
             </br>
-            <select name="id_genre">
+            <select name="id_genre" class="form-select" aria-label="Default select example">
+            <option disabled selected value="">Genres</option>
             <?php
                 foreach($genres as $genre){
                     ?>
@@ -33,7 +36,8 @@
         <div class="mb-3">
             <label for="id_author" class="form-label">Author</label>
             </br>
-            <select name="id_author">
+            <select name="id_author" class="form-select" aria-label="Default select example">
+                <option disabled selected value="">Authors</option>
             <?php
                 foreach($authors as $author){
                     ?>

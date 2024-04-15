@@ -12,7 +12,7 @@
         foreach($g as $genre){
     ?>
     <div class="container mt-2">
-        <form method="POST" action="index.php?controller=genre&action=update">
+        <form method="POST" action="index_admin.php?controller=genre&action=update">
         <div class="mb-3">
             <label for="title" class="form-label">ID</label>
             <input type="text" class="form-control" name="id" id="id" value="<?=$genre->get_id_genre();?>"readonly >

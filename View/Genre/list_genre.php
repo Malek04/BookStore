@@ -11,7 +11,7 @@
     <div class="container mt-2">
     <h2>Genres List</h2>
     <hr>
-    <a href="index.php?controller=genre&action=create" class="btn btn-primary">Add</a>
+    <a href="index_admin.php?controller=genre&action=create" class="btn btn-primary">Add</a>
     <table class="table table-hover" >
         <tr class="text-center">
             <th scope="col">id genre</th>
@@ -25,8 +25,8 @@
                     <td scope="row"><?=$genre->get_id_genre()?></td>
                     <td scope="row"><?=$genre->get_genre()?></td>
                     <td scope="row">
-                        <a href="index.php?controller=genre&action=edit&id=<?=  $genre->get_id_genre() ?>" class="btn btn-success">Modify</a>
-                        <a href="index.php?controller=genre&action=delete&id=<?= $genre->get_id_genre() ?>" class="btn btn-danger">Delete</a>
+                        <a href="index_admin.php?controller=genre&action=edit&id=<?=  $genre->get_id_genre() ?>" class="btn btn-success">Modify</a>
+                        <a href="index_admin.php?controller=genre&action=delete&id=<?= $genre->get_id_genre() ?>" class="btn btn-danger">Delete</a>
                     </td>
                 <tr>
         <?php

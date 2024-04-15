@@ -14,7 +14,7 @@
 
         public static function storeAction($p){
             $g = Genre::create($p);
-            echo '<script>window.location.href = "index.php?controller=genre&action=list";</script>';
+            echo '<script>window.location.href = "index_admin.php?controller=genre&action=list";</script>';
         }
 
         public static function editAction(){
@@ -26,7 +26,7 @@
         public static function updateAction(){
             extract($_POST);
             Genre::edit($id, $genre);
-            echo '<script>window.location.href = "index.php?controller=genre&action=list";</script>';
+            echo '<script>window.location.href = "index_admin.php?controller=genre&action=list";</script>';
         }
 
         public static function deleteAction(){
@@ -36,7 +36,7 @@
         public static function destroyAction(){
             $id = $_GET['id'];
             genre::delete($id);
-            echo '<script>window.location.href = "index.php?controller=genre&action=list";</script>';
+            echo '<script>window.location.href = "index_admin.php?controller=genre&action=list";</script>';
         }
 
     }

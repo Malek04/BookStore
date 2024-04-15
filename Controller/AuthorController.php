@@ -21,7 +21,7 @@
                 $_POST['image'] = $target_file_name;
             }
             $o = Author::create($p);
-            echo '<script>window.location.href = "index.php?controller=author&action=list";</script>';
+            echo '<script>window.location.href = "index_admin.php?controller=author&action=list";</script>';
         }
         
         public static function editAction(){
@@ -37,7 +37,7 @@
                 $_GET['image'] = $target_file_name;
             }
             Author::edit($id_author, $name, $image, $about);
-            echo '<script>window.location.href = "index.php?controller=author&action=list";</script>';
+            echo '<script>window.location.href = "index_admin.php?controller=author&action=list";</script>';
         }
 
         public static function deleteAction(){
@@ -48,7 +48,7 @@
         public static function destroyAction(){
             $id = $_GET['id'];
             Author::delete($id);
-            echo '<script>window.location.href = "index.php?controller=author&action=list";</script>';
+            echo '<script>window.location.href = "index_admin.php?controller=author&action=list";</script>';
         }
     
     }

@@ -11,7 +11,7 @@
     <div class="container mt-2">
     <h2>Admins List</h2>
     <hr>
-    <a href="index.php?controller=admin&action=create" class="btn btn-primary">Add</a>
+    <a href="index_admin.php?controller=admin&action=create" class="btn btn-primary">Add</a>
     <table class="table table-hover" >
         <tr class="text-center">
             <th scope="col">ID Admin</th>
@@ -37,8 +37,8 @@
                     <td scope="row"><?=$admin->get_email()?></td>
                     <td scope="row"><?=$admin->get_pwd()?></td>
                     <td scope="row">
-                        <a href="index.php?controller=admin&action=edit&id=<?=  $admin->get_id_admin() ?>" class="btn btn-success">Modify</a>  
-                        <a href="index.php?controller=admin&action=delete&id=<?= $admin->get_id_admin() ?>" class="btn btn-danger">Delete</a>
+                        <a href="index_admin.php?controller=admin&action=edit&id=<?=  $admin->get_id_admin() ?>" class="btn btn-success">Modify</a>  
+                        <a href="index_admin.php?controller=admin&action=delete&id=<?= $admin->get_id_admin() ?>" class="btn btn-danger">Delete</a>
                     </td>
                 <tr>
         <?php

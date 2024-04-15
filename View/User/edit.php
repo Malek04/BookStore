@@ -1,6 +1,3 @@
-<?php
-    include __DIR__.'/../header.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +12,7 @@
         foreach($u as $user){
     ?>
     <div class="container mt-2">
-        <form method="POST" action="index.php?controller=user&action=update">
+        <form method="POST" action="index_admin.php?controller=user&action=update">
         <div class="mb-3">
             <label for="title" class="form-label">ID</label>
             <input type="text" class="form-control" name="id" id="id" value="<?=$user->get_id_user();?>"readonly >
