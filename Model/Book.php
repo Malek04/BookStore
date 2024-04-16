@@ -124,5 +124,17 @@
             $rq = "SELECT * FROM book WHERE vendu = (SELECT MAX(vendu) FROM book)";
             return DataBase::Query($rq,'Book');
         }
+
+        public static function popular(){
+            $rq = "SELECT * FROM book order by vendu DESC";
+            return DataBase::Query($rq,'Book');
+        }
+
+        public static function searchByGenre($id_genre){
+            $rq = "SELECT * FROM book 
+                   WHERE id_genre = :id_genre";
+            $tab['id_genre'] = $id_genre;
+            return DataBase::Query($rq, 'Book', $tab);
+        }
     }
 ?>

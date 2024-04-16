@@ -50,6 +50,5 @@
             book::delete($id);
             echo '<script>window.location.href = "index_admin.php?controller=book&action=list";</script>';
         }
-        
     }
 ?>
