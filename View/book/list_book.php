@@ -28,6 +28,8 @@
             <th scope="col">image</th>
             <th scope="col">description</th>
             <th scope="col">qte</th>
+            <th scope="col">vendu</th>
+            <th scope="col">stock</th>
             <th scope="col">Action</th>
         </tr>
         <?php
@@ -44,6 +46,8 @@
                     <td scope="row"><img class="rounded" src="Images/cover/<?=$book->get_image()?>" width="100" height="150"/></td>
                     <td scope="row"><?=$book->get_description()?></td>
                     <td scope="row"><?=$book->get_qte()?></td>
+                    <td scope="row"><?=$book->get_vendu()?></td>
+                    <td scope="row"><?=$book->get_stock()?></td>
                     <td scope="row">
                         <a href="index_admin.php?controller=book&action=edit&id=<?= $book->get_id_book() ?>" class="btn btn-success">Modify</a>
                         <br><br>

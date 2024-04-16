@@ -12,6 +12,8 @@
         private $image;
         private $description;
         private $qte;
+        private $vendu;
+        private $stock;
 
         public function get_id_book(){
             return $this->id_book;
@@ -57,17 +59,25 @@
             return $this->qte;
         }
 
+        public function get_vendu(){
+            return $this->vendu;
+        }
+
+        public function get_stock(){
+            return $this->qte - $this->vendu;
+        }
+
         public static function all(){
             $rq="select * from book";
             return DataBase::Query($rq,'Book');
         }
         
         public static function create($tab){
-            $rq = "INSERT INTO `book`(`id_genre`, `id_author`, `title`, `length`, `language`, `publisher`, `price`, `image`, `description`, `qte`) VALUES (:id_genre,:id_author,:title,:length,:language,:publisher,:price,:image,:description,:qte)";
+            $rq = "INSERT INTO `book`(`id_genre`, `id_author`, `title`, `length`, `language`, `publisher`, `price`, `image`, `description`, `qte`, `vendu`,`stock`) VALUES (:id_genre,:id_author,:title,:length,:language,:publisher,:price,:image,:description,:qte,:vendu,:stock)";
             return DataBase::execute($rq, $tab);
         }       
         
-        public static function edit($id_book, $id_genre, $id_author, $title, $length, $language, $price, $image, $description, $qte) {
+        public static function edit($id_book, $id_genre, $id_author, $title, $length, $language, $price, $image, $description, $qte, $vendu, $stock) {
             $rq = "UPDATE book 
                     SET id_genre = :id_genre,
                         id_author = :id_author,
@@ -77,7 +87,9 @@
                         price = :price,
                         image = :image,
                         description = :description,
-                        qte = :qte
+                        qte = :qte,
+                        vendu = :vendu,
+                        stock = :stock
                     WHERE id_book = :id_book";
             $tab = array(
                 ':id_genre' => $id_genre,
@@ -89,11 +101,13 @@
                 ':image' => $image,
                 ':description' => $description,
                 ':qte' => $qte,
+                ':vendu' => $vendu,
+                ':stock' => $stock,
                 ':id_book' => $id_book,
             );
             return DataBase::execute($rq, $tab);
         }
-        
+                
         public static function delete($id){
             $rq = "DELETE FROM `book` WHERE id_book = :id";
             $tab['id'] = $id;

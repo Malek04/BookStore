@@ -79,6 +79,14 @@
             <label for="qte" class="form-label">Quantité</label>
             <input type="number" class="form-control" name="qte" id="qte">
         </div>
+        <div class="mb-3">
+            <label for="vendu" class="form-label">Vendu</label>
+            <input type="number" class="form-control" name="vendu" id="vendu">
+        </div>
+        <div class="mb-3">
+            <label for="stock" class="form-label">stock</label>
+            <input type="number" class="form-control" name="stock" id="stock">
+        </div>
         <button type="submit" class="btn btn-primary">Add</button>
         </form>
     </div>

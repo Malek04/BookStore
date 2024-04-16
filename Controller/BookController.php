@@ -37,7 +37,7 @@
             } else {
                 $image = $_POST['image'];
             }
-            Book::edit($id_book, $id_genre, $id_author, $title, $length, $language, $price, $image, $description, $qte);
+            Book::edit($id_book, $id_genre, $id_author, $title, $length, $language, $price, $image, $description, $qte, $vendu,$stock);
             echo '<script>window.location.href = "index_admin.php?controller=book&action=list";</script>';
         }
                 

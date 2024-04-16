@@ -72,6 +72,16 @@
                 <label for="qte" class="form-label">Quantité</label>
                 <input type="number" class="form-control" name="qte" id="qte" value="<?=$book->get_qte()?>">
             </div>
+            <div class="mb-3">
+                <label for="vendu" class="form-label">Vendu</label>
+                <input type="number" class="form-control" name="vendu" id="qte" value="<?=$book->get_vendu()?>">
+            </div>
+
+            <div class="mb-3">
+                <label for="stock" class="form-label">Stock</label>
+                <input type="number" class="form-control" name="stock" id="stock" value="<?=$book->get_stock()?>">
+            </div>
+
             <button type="submit" class="btn btn-primary">Modify</button>
         <?php
             }
