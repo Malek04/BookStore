@@ -120,6 +120,9 @@
             return DataBase::Query($rq, 'Book', $params);
         }
 
-    
+        public static function topsell(){
+            $rq = "SELECT * FROM book WHERE vendu = (SELECT MAX(vendu) FROM book)";
+            return DataBase::Query($rq,'Book');
+        }
     }
 ?>

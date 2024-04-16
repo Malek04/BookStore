@@ -59,7 +59,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="index_admin.php?controller=comment&action=list" class="sidebar-link">
                         <i class="lni lni-bubble"></i>
                         <span>Comments</span>
                     </a>

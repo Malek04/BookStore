@@ -3,6 +3,8 @@
     require_once __DIR__.'/model/genre.php';
     require_once __DIR__.'/model/author.php';
 	require_once __DIR__.'/model/book.php';
+	require_once __DIR__.'/Controller/HomeController.php';
+	require_once __DIR__.'/Controller/CommentController.php';
 	$books = book::all();
     $genres = Genre::all();
     $authors = Author::all();
@@ -99,9 +101,6 @@
 									<li class="menu-item"><a href="#featured-books" class="nav-link">Featured</a></li>
 									<li class="menu-item"><a href="#best-selling" class="nav-link">Best Selling</a></li>
 									<li class="menu-item"><a href="#popular-books" class="nav-link">Popular</a></li>
-									<li class="menu-item"><a href="#special-offer" class="nav-link">Offer</a></li>
-									<li class="menu-item"><a href="#latest-blog" class="nav-link">Articles</a></li>
-									<li class="menu-item"><a href="#download-app" class="nav-link">Download App</a></li>
 								</ul>
 
 								<div class="hamburger">
@@ -268,7 +267,6 @@
         </div><!-- row -->
     </div><!-- container -->
 </section>
-
 	<section id="best-selling" class="leaf-pattern-overlay">
 		<div class="corner-pattern-overlay"></div>
 		<div class="container">
@@ -277,29 +275,27 @@
 				<div class="col-md-8">
 
 					<div class="row">
-
+						<?php
+							$b=Book::topsell();
+						?>
 						<div class="col-md-6">
 							<figure class="products-thumb">
-								<img src="view/interface/images/single-image.jpg" alt="book" class="single-image">
+								<img src="images/cover/<?=$b[0]->get_image();?>" alt="book" class="single-image">
 							</figure>
 						</div>
-
 						<div class="col-md-6">
 							<div class="product-entry">
 								<h2 class="section-title divider">Best Selling Book</h2>
-
 								<div class="products-content">
-									<div class="author-name">By Timbur Hood</div>
-									<h3 class="item-title">Birds gonna be happy</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet,
-										libero ipsum enim pharetra hac.</p>
-									<div class="item-price">$ 45.00</div>
+									<div class="author-name"></div>
+									<h3 class="item-title"><?=$b[0]->get_title();?></h3>
+									<p><?=$b[0]->get_description();?></</p>
+									<div class="item-price">DT <?=$b[0]->get_price();?></</div>
 									<div class="btn-wrap">
 										<a href="#" class="btn-accent-arrow">shop it now <i
 												class="icon icon-ns-arrow-right"></i></a>
 									</div>
 								</div>
-
 							</div>
 						</div>
 
@@ -325,12 +321,13 @@
 					</div>
 
 					<ul class="tabs">
-						<li data-tab-target="#all-genre" class="active tab">All Genre</li>
-						<li data-tab-target="#business" class="tab">Business</li>
-						<li data-tab-target="#technology" class="tab">Technology</li>
-						<li data-tab-target="#romantic" class="tab">Romantic</li>
-						<li data-tab-target="#adventure" class="tab">Adventure</li>
-						<li data-tab-target="#fictional" class="tab">Fictional</li>
+						<?php
+							foreach($genres as $g){
+						?>
+						<li data-tab-target="#business" class="tab"><?=$g->get_genre()?></li>
+						<?php
+							}
+						?>
 					</ul>
 
 					<div class="tab-content">
@@ -743,99 +740,6 @@
 		</div>
 	</section>
 
-	<section id="special-offer" class="bookshelf pb-5 mb-5">
-
-		<div class="section-header align-center">
-			<div class="title">
-				<span>Grab your opportunity</span>
-			</div>
-			<h2 class="section-title">Books with offer</h2>
-		</div>
-
-		<div class="container">
-			<div class="row">
-				<div class="inner-content">
-					<div class="product-list" data-aos="fade-up">
-						<div class="grid product-grid">
-							<div class="product-item">
-								<figure class="product-style">
-									<img src="view/interface/images/product-item5.jpg" alt="Books" class="product-item">
-									<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to
-										Cart</button>
-								</figure>
-								<figcaption>
-									<h3>Simple way of piece life</h3>
-									<span>Armor Ramsey</span>
-									<div class="item-price">
-										<span class="prev-price">$ 50.00</span>$ 40.00
-									</div>
-								</div>
-							</figcaption>
-
-							<div class="product-item">
-								<figure class="product-style">
-									<img src="view/interface/images/product-item6.jpg" alt="Books" class="product-item">
-									<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to
-										Cart</button>
-								</figure>
-								<figcaption>
-									<h3>Great travel at desert</h3>
-									<span>Sanchit Howdy</span>
-									<div class="item-price">
-										<span class="prev-price">$ 30.00</span>$ 38.00
-									</div>
-								</div>
-							</figcaption>
-
-							<div class="product-item">
-								<figure class="product-style">
-									<img src="view/interface/images/product-item7.jpg" alt="Books" class="product-item">
-									<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to
-										Cart</button>
-								</figure>
-								<figcaption>
-									<h3>The lady beauty Scarlett</h3>
-									<span>Arthur Doyle</span>
-									<div class="item-price">
-										<span class="prev-price">$ 35.00</span>$ 45.00
-									</div>
-								</div>
-							</figcaption>
-
-							<div class="product-item">
-								<figure class="product-style">
-									<img src="view/interface/images/product-item8.jpg" alt="Books" class="product-item">
-									<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to
-										Cart</button>
-								</figure>
-								<figcaption>
-									<h3>Once upon a time</h3>
-									<span>Klien Marry</span>
-									<div class="item-price">
-										<span class="prev-price">$ 25.00</span>$ 35.00
-									</div>
-								</div>
-							</figcaption>
-
-							<div class="product-item">
-								<figure class="product-style">
-									<img src="view/interface/images/product-item2.jpg" alt="Books" class="product-item">
-									<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to
-										Cart</button>
-								</figure>
-								<figcaption>
-									<h3>Simple way of piece life</h3>
-									<span>Armor Ramsey</span>
-									<div class="item-price">$ 40.00</div>
-								</figcaption>
-							</div>
-						</div><!--grid-->
-					</div>
-				</div><!--inner-content-->
-			</div>
-		</div>
-	</section>
-
 	<section id="subscribe">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -846,311 +750,36 @@
 						<div class="col-md-6">
 
 							<div class="title-element">
-								<h2 class="section-title divider">Subscribe to our newsletter</h2>
+								<h2 class="section-title divider">Send Us a Message</h2>
 							</div>
 
 						</div>
 						<div class="col-md-6">
-
 							<div class="subscribe-content" data-aos="fade-up">
-								<p>Sed eu feugiat amet, libero ipsum enim pharetra hac dolor sit amet, consectetur. Elit
-									adipiscing enim pharetra hac.</p>
-								<form id="form">
-									<input type="text" name="email" placeholder="Enter your email addresss here">
-									<button class="btn-subscribe">
-										<span>send</span>
+								<p>Your Opinion Matters for our improvement</p>
+								<form method="POST" action="index.php?controller=comment&action=store">
+									<input type="text" name="fname" placeholder="First Name">
+									<input type="text" name="lname" placeholder="Last Name">
+									<input type="text" name="email" placeholder="email">
+									<input type="text" name="message" placeholder="Your Opinion">
+									<button type="submit" class="btn-subscribe">
+										<span>Send</span>
 										<i class="icon icon-send"></i>
 									</button>
 								</form>
 							</div>
-
 						</div>
-
+						<?php
+						if (isset($_GET['controller']) && $_GET['controller'] == 'comment' && isset($_GET['action']) && $_GET['action'] == 'store') {
+							CommentController::storeAction($_POST);
+						}
+						?>
 					</div>
 				</div>
 
 			</div>
 		</div>
 	</section>
-
-	<section id="latest-blog" class="py-5 my-5">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-
-					<div class="section-header align-center">
-						<div class="title">
-							<span>Read our articles</span>
-						</div>
-						<h2 class="section-title">Latest Articles</h2>
-					</div>
-
-					<div class="row">
-
-						<div class="col-md-4">
-
-							<article class="column" data-aos="fade-up">
-
-								<figure>
-									<a href="#" class="image-hvr-effect">
-										<img src="view/interface/images/post-img1.jpg" alt="post" class="post-image">
-									</a>
-								</figure>
-
-								<div class="post-item">
-									<div class="meta-date">Mar 30, 2021</div>
-									<h3><a href="#">Reading books always makes the moments happy</a></h3>
-
-									<div class="links-element">
-										<div class="categories">inspiration</div>
-										<div class="social-links">
-											<ul>
-												<li>
-													<a href="#"><i class="icon icon-facebook"></i></a>
-												</li>
-												<li>
-													<a href="#"><i class="icon icon-twitter"></i></a>
-												</li>
-												<li>
-													<a href="#"><i class="icon icon-behance-square"></i></a>
-												</li>
-											</ul>
-										</div>
-									</div><!--links-element-->
-
-								</div>
-							</article>
-
-						</div>
-						<div class="col-md-4">
-
-							<article class="column" data-aos="fade-up" data-aos-delay="200">
-								<figure>
-									<a href="#" class="image-hvr-effect">
-										<img src="view/interface/images/post-img2.jpg" alt="post" class="post-image">
-									</a>
-								</figure>
-								<div class="post-item">
-									<div class="meta-date">Mar 29, 2021</div>
-									<h3><a href="#">Reading books always makes the moments happy</a></h3>
-
-									<div class="links-element">
-										<div class="categories">inspiration</div>
-										<div class="social-links">
-											<ul>
-												<li>
-													<a href="#"><i class="icon icon-facebook"></i></a>
-												</li>
-												<li>
-													<a href="#"><i class="icon icon-twitter"></i></a>
-												</li>
-												<li>
-													<a href="#"><i class="icon icon-behance-square"></i></a>
-												</li>
-											</ul>
-										</div>
-									</div><!--links-element-->
-
-								</div>
-							</article>
-
-						</div>
-						<div class="col-md-4">
-
-							<article class="column" data-aos="fade-up" data-aos-delay="400">
-								<figure>
-									<a href="#" class="image-hvr-effect">
-										<img src="view/interface/images/post-img3.jpg" alt="post" class="post-image">
-									</a>
-								</figure>
-								<div class="post-item">
-									<div class="meta-date">Feb 27, 2021</div>
-									<h3><a href="#">Reading books always makes the moments happy</a></h3>
-
-									<div class="links-element">
-										<div class="categories">inspiration</div>
-										<div class="social-links">
-											<ul>
-												<li>
-													<a href="#"><i class="icon icon-facebook"></i></a>
-												</li>
-												<li>
-													<a href="#"><i class="icon icon-twitter"></i></a>
-												</li>
-												<li>
-													<a href="#"><i class="icon icon-behance-square"></i></a>
-												</li>
-											</ul>
-										</div>
-									</div><!--links-element-->
-
-								</div>
-							</article>
-
-						</div>
-
-					</div>
-
-					<div class="row">
-
-						<div class="btn-wrap align-center">
-							<a href="#" class="btn btn-outline-accent btn-accent-arrow" tabindex="0">Read All Articles<i
-									class="icon icon-ns-arrow-right"></i></a>
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section id="download-app" class="leaf-pattern-overlay">
-		<div class="corner-pattern-overlay"></div>
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-8">
-					<div class="row">
-
-						<div class="col-md-5">
-							<figure>
-								<img src="view/interface/images/device.png" alt="phone" class="single-image">
-							</figure>
-						</div>
-
-						<div class="col-md-7">
-							<div class="app-info">
-								<h2 class="section-title divider">Download our app now !</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis sed ptibus
-									liberolectus nonet psryroin. Amet sed lorem posuere sit iaculis amet, ac urna.
-									Adipiscing fames semper erat ac in suspendisse iaculis.</p>
-								<div class="google-app">
-									<img src="view/interface/images/google-play.jpg" alt="google play">
-									<img src="view/interface/images/app-store.jpg" alt="app store">
-								</div>
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<footer id="footer">
-		<div class="container">
-			<div class="row">
-
-				<div class="col-md-4">
-
-					<div class="footer-item">
-						<div class="company-brand">
-							<img src="view/interface/images/logo.png" alt="logo" class="footer-logo">
-							<!--<h1><a>BookStore</a></h1>-->
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis sed ptibus liberolectus
-								nonet psryroin. Amet sed lorem posuere sit iaculis amet, ac urna. Adipiscing fames
-								semper erat ac in suspendisse iaculis.</p>
-						</div>
-					</div>
-
-				</div>
-
-				<div class="col-md-2">
-
-					<div class="footer-menu">
-						<h5>About Us</h5>
-						<ul class="menu-list">
-							<li class="menu-item">
-								<a href="#">vision</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">articles </a>
-							</li>
-							<li class="menu-item">
-								<a href="#">careers</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">service terms</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">donate</a>
-							</li>
-						</ul>
-					</div>
-
-				</div>
-				<div class="col-md-2">
-
-					<div class="footer-menu">
-						<h5>Discover</h5>
-						<ul class="menu-list">
-							<li class="menu-item">
-								<a href="#">Home</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">Books</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">Authors</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">Subjects</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">Advanced Search</a>
-							</li>
-						</ul>
-					</div>
-
-				</div>
-				<div class="col-md-2">
-
-					<div class="footer-menu">
-						<h5>My account</h5>
-						<ul class="menu-list">
-							<li class="menu-item">
-								<a href="#">Sign In</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">View Cart</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">My Wishtlist</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">Track My Order</a>
-							</li>
-						</ul>
-					</div>
-
-				</div>
-				<div class="col-md-2">
-
-					<div class="footer-menu">
-						<h5>Help</h5>
-						<ul class="menu-list">
-							<li class="menu-item">
-								<a href="#">Help center</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">Report a problem</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">Suggesting edits</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">Contact us</a>
-							</li>
-						</ul>
-					</div>
-
-				</div>
-
-			</div>
-			<!-- / row -->
-
-		</div>
-	</footer>
-
 	<div id="footer-bottom">
 		<div class="container">
 			<div class="row">
