@@ -262,7 +262,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="btn-wrap align-right">
-                    <a href="index.php?controller=HomeController&action=indexAction#featured-books" target="sect" class="btn-accent-arrow">View all Books <i class="icon icon-ns-arrow-right"></i></a>
+                    <a href="index.php?controller=HomeController&action=indexAction#featured-books" class="btn-accent-arrow">View all Books <i class="icon icon-ns-arrow-right"></i></a>
                 </div>
             </div>
         </div><!-- row -->
@@ -325,17 +325,19 @@
 						<?php
 							foreach($genres as $g){
 						?>
-						<a href="index.php?controller=home&action=search&id=<?=$g->get_id_genre()?>" class="tab"><?=$g->get_genre()?></a>
+						<a href="index.php?id_genre=<?=$g->get_id_genre()?>#popular-books" class="tab"><?=$g->get_genre()?></a>
 						<?php
 							}
 						?>
 					</ul>
-
+					
 					<div class="tab-content">
 						<div id="<?=$g->get_genre();?>" data-tab-content class="active">
 							<div class="row">
 							<?php
+							if(isset($_GET["id_genre"])){
 							foreach($pb as $b){
+								if($b->get_id_genre()==$_GET["id_genre"]){
 							?>
 								<div class="col-md-3">
 									<div class="product-item">
@@ -356,47 +358,13 @@
 									</div>
 								</div>
 							<?php
+							}}}
+							else{
+								echo"<h2>Select a Genre</h2>";
 							}
 							?>
 						</div>
-						<?php
-							if (isset($_GET['controller']) && $_GET['controller'] == 'home' && isset($_GET['action']) && $_GET['action'] == 'search') {
-								$sbg = Book::searchByGenre($_GET['id']);
-								foreach($sbg as $book){
-							}
-						?>
-						<div id="<?=$g->get_genre();?>" data-tab-content>
-							<div class="row">
-								<div class="col-md-3">
-									<div class="product-item">
-										<figure class="product-style">
-											<img src="images/cover/<?=$book->get_image()?>" alt="Books" class="product-item">
-											<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to
-												Cart</button>
-										</figure>
-										<figcaption>
-											<h3><?=$book->get_title()?></h3>
-											<span><?php foreach($authors as $a) {
-                                                if ($a->get_id_author() == $book->get_id_author()) {
-                                                    ?><span><?= $a->get_name() ?></span><?php
-                                                }
-                                            } ?></span>
-											<div class="item-price"> <?=$book->get_price()?></div>
-										</figcaption>
-									</div>
-								</div>
-							</div>
-						</div>
-						<?php
-							}
-							else{
-								?>
-								
-								<?php
-							}
-						?>
-				</div><!--inner-tabs-->
-
+					</div>
 			</div>
 		</div>
 	</section>

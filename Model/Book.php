@@ -129,12 +129,5 @@
             $rq = "SELECT * FROM book order by vendu DESC";
             return DataBase::Query($rq,'Book');
         }
-
-        public static function searchByGenre($id_genre){
-            $rq = "SELECT * FROM book 
-                   WHERE id_genre = :id_genre";
-            $tab['id_genre'] = $id_genre;
-            return DataBase::Query($rq, 'Book', $tab);
-        }
     }
 ?>

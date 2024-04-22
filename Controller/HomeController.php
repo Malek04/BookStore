@@ -8,6 +8,5 @@
         public static function indexAction(){
             $books = Book::all();
         }
-
     }
 ?>
