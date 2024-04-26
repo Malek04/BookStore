@@ -262,7 +262,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="btn-wrap align-right">
-                    <a href="index.php?controller=HomeController&action=indexAction#featured-books" class="btn-accent-arrow">View all Books <i class="icon icon-ns-arrow-right"></i></a>
+                    <a href="index.php?controller=HomeController&action=indexAction#featured-books" target="sect" class="btn-accent-arrow">View all Books <i class="icon icon-ns-arrow-right"></i></a>
                 </div>
             </div>
         </div><!-- row -->
@@ -353,7 +353,7 @@
                                                     ?><span><?= $a->get_name() ?></span><?php
                                                 }
                                             } ?></span>
-											<div class="item-price">$ <?=$b->get_price()?></div>
+											<div class="item-price">DT <?=$b->get_price()?></div>
 										</figcaption>
 									</div>
 								</div>
@@ -366,17 +366,6 @@
 						</div>
 					</div>
 			</div>
-		</div>
-	</section>
-
-	<section id="quotation" class="align-center pb-5 mb-5">
-		<div class="inner-content">
-			<h2 class="section-title divider">Quote of the day</h2>
-			<blockquote data-aos="fade-up">
-				<q>“The more that you read, the more things you will know. The more that you learn, the more places
-					you’ll go.”</q>
-				<div class="author-name">Dr. Seuss</div>
-			</blockquote>
 		</div>
 	</section>
 
